@@ -6,6 +6,9 @@ Carcará-angular is a simple Boilerplate to start angular projects with the most
 2. AngularAMD
 3. Editor Config
 4. Babel
+5. Tests
+   * Jasmine
+   * Karma
 4. Gulp
    * Compile Sass :ballot_box_with_check:
    * Watch Files :ballot_box_with_check:
