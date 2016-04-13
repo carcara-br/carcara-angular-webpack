@@ -7,6 +7,8 @@
 
 Carcará-angular is a simple Boilerplate to start angular projects with the most common structures and tasks of my workflow.
 
+This project uses or makes :
+
 1. Atomic SASS Styles
 2. AngularAMD
 3. Editor Config
@@ -16,9 +18,9 @@ Carcará-angular is a simple Boilerplate to start angular projects with the most
    * Karma
    * Protractor
 4. Gulp
-   * Compile Sass :ballot_box_with_check:
-   * Watch Files :ballot_box_with_check:
-   * Live Reload :ballot_box_with_check:
+   * Compile Sass 
+   * Watch Files 
+   * Live Reload
    * Uglify & Concat JS
    * JS Linter
    * Move to Dist Folder 
