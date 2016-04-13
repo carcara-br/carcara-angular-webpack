@@ -1,4 +1,9 @@
-# CARCARÁ
+
+<p>
+  <img src="https://github.com/fromdenisvieira/carcara-angular/blob/master/carcara.jpg" width="200">
+</p>
+
+# Carcará Angular Boilerplate
 
 Carcará-angular is a simple Boilerplate to start angular projects with the most common structures and tasks of my workflow.
 
@@ -9,6 +14,7 @@ Carcará-angular is a simple Boilerplate to start angular projects with the most
 5. Tests
    * Jasmine
    * Karma
+   * Protractor
 4. Gulp
    * Compile Sass :ballot_box_with_check:
    * Watch Files :ballot_box_with_check:
@@ -19,47 +25,90 @@ Carcará-angular is a simple Boilerplate to start angular projects with the most
    * Minify images
    * Create Sprites
 
-##How to use?
+## Getting Started
 
-###Operational System dependencies
+### Installation
+
+First of all, install the dependencies to run this boilerplate.
 
 - [NodeJS](http://nodejs.org/)
-- [Gulpjs](http://gulpjs.com/)
+- [GulpJS](http://gulpjs.com/)
 - [Bower](http://bower.io/)
 
-##Creating the project
 
-Get the carcará-angular into your new project with the command:
+```sh
+# Clone this repository
+$ git clone git@github.com:fromdenisvieira/carcara-angular.git [name_of_project]
+$ cd [name_of_project]
 
-```
-git clone https://github.com/fromdenisvieira/carcara-angular name_of_project
-```
+# install gulp globally
+$ npm install -g gulp
 
-###Installing dependencies
+# install bower globally
+$ npm install -g bower
 
-Run:
-
-```
-cd name_of_project
-```
-
-And
+# install dependencies
+$ npm install
+$ bower install
 
 ```
-npm i
-```
-
 Wait and enjoy!!!
 
-##The tasks
+With the commands above, you have everything to start.
 
-###On end of your project
+### Folders and Files
 
-Run:
-
+```sh
+├── README.md
+├── build
+│   ├── css
+│   │   └── style.css
+│   ├── img 
+│   ├── index.html
+│   └── js
+│       └── main.js
+├── gulpfile.babel.js
+├── package.json
+└── src
+    ├── img 
+    ├── js 
+    ├── styl
+    │   ├── _core/*.styl
+    │   ├── atoms/*.styl
+    │   ├── molecules/*.styl
+    │   ├── organisms/*.styl
+    │   ├── widgets/*.styl 
+    │   ├── pages/*.styl 
+    │   └── style.styl
+    └── jade
+        └── index.jade
 ```
-gulp
-```
+
+Those folders and file will change during the project.
+
+## Tasks
+
+- `gulp`: run all tasks and initialize watch for changes and a server
+- `gulp js`: execute js files
+- `gulp jade`: compile jade files
+- `gulp css`: compile stylus files
+- `gulp images`: compress image files
+- `gulp connect`: inicialize a server
+- `gulp watch`: call for watch files 
+- `gulp build`: run all tasks  
+- 
+
+## Credits
+
+This boilerplate uses as a base in the awesome referencies
+- [Qualy Boierplate](https://github.com/Qualy-org/qualy) by [@Willian_justen](https://twitter.com/Willian_justen) :heart:
+- [Kratos Boilerplate](https://github.com/LFeh/kratos-boilerplate) by Felipe Fialho
+
+
+## License
+
+[MIT License](http://denisvieira.js.org/) © Denis Vieira Rufino
+
 
 <!--Simple, not?-->
 
