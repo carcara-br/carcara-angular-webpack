@@ -96,18 +96,17 @@ Those folders and file will change during the project.
 - `gulp connect`: inicialize a server
 - `gulp watch`: call for watch files 
 - `gulp build`: run all tasks  
-- 
 
 ## Credits
 
 This boilerplate uses as a base in the awesome referencies
-- [Qualy Boierplate](https://github.com/Qualy-org/qualy) by [@Willian_justen](https://twitter.com/Willian_justen) :heart:
+- [Qualy Boierplate](https://github.com/Qualy-org/qualy) by Willian_justen
 - [Kratos Boilerplate](https://github.com/LFeh/kratos-boilerplate) by Felipe Fialho
 
 
 ## License
 
-[MIT License](http://denisvieira.js.org/) © Denis Vieira Rufino
+© Denis Vieira Rufino
 
 
 <!--Simple, not?-->
