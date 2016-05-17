@@ -9,12 +9,17 @@ webpackJsonp([0],[
 	__webpack_require__(3);
 
 	__webpack_require__(4)(Angular);
+	__webpack_require__(10)(Angular);
 	//require('./page4Module')(Angular);
 
-	__webpack_require__(10);
-	var ngModule = Angular.module('myApp', [__webpack_require__(12), 'oc.lazyLoad', 'page3App']);
+	__webpack_require__(15);
+	var ngModule = Angular.module('myApp', [
+	// External Dependencies
+	__webpack_require__(11)
+	// App Modules Dependencies
+	, 'oc.lazyLoad', 'page3App', 'page5App']);
 
-	__webpack_require__(13)(ngModule, Angular);
+	__webpack_require__(17)(ngModule, Angular);
 
 /***/ },
 /* 1 */,
@@ -72,7 +77,7 @@ webpackJsonp([0],[
 
 
 	// module
-	exports.push([module.id, "#page3 {\n  background: green; }\n", ""]);
+	exports.push([module.id, "#page3 {\n  background: red; }\n", ""]);
 
 	// exports
 
@@ -398,7 +403,7 @@ webpackJsonp([0],[
 	    var vm = this;
 	    vm.title = 'This is page 3';
 
-	    vm.family = [{ name: 'Andy' }, { name: 'Jamie' }, { name: 'Lucy' }, { name: 'Quinn' }];
+	    vm.family = [{ name: 'Andy' }, { name: 'Jamie' }, { name: 'Lucy' }, { name: 'Quinn' }, { name: 'Denis' }];
 	};
 
 	exports['default'] = function (ngModule) {
@@ -411,44 +416,39 @@ webpackJsonp([0],[
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	'use strict';
 
-	// load the styles
-	var content = __webpack_require__(11);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	exports['default'] = function (Angular) {
+	    var ngPage5Module = Angular.module('page5App', [__webpack_require__(11)]);
+
+	    __webpack_require__(12);
+	    __webpack_require__(14)(ngPage5Module);
+
+	    ngPage5Module.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
+	        //$locationProvider.html5Mode(true);
+	        // $locationProvider.hashPrefix('!');
+
+	        // $urlRouterProvider.otherwise('/page5');
+
+	        var modulePath = 'app/modules/page5/views/';
+
+	        // $stateProvider.state('page5', {
+	        //     url: '/page5',
+	        //     template: require(modulePath+'index.html'),
+	        //     controller: 'Page5Controller',
+	        //     controllerAs: 'vm'
+	        // });
+	    }]);
+	};
+
+	module.exports = exports['default'];
 
 /***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "body {\n  background: red; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 12 */
 /***/ function(module, exports) {
 
 	/**
@@ -4823,16 +4823,122 @@ webpackJsonp([0],[
 	})(window, window.angular);
 
 /***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(13);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./page5.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./page5.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "#page5 {\n  background: yellow; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var Page5Controller = function Page5Controller($scope, $rootScope, $location, APP_SETTINGS, CustomersService, $stateParams) {
+	  var vm = this;
+	  vm.title = 'This is page 5';
+	  vm.family = [{ name: 'Andy 5' }, { name: 'Jamie 55' }, { name: 'Lucy 5' }, { name: 'Quinn 5' }, { name: 'Denis 5' }];
+	};
+
+	Page5Controller.$inject = ['$scope', '$rootScope', '$location', 'APP_SETTINGS', '$stateParams'];
+
+	exports['default'] = function (ngModule) {
+	  ngModule.controller('Page5Controller', Page5Controller);
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(16);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "body {\n  background: red; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	exports['default'] = function (ngModule, Angular) {
+	exports["default"] = function (ngModule, Angular) {
+	    ngModule.constant('APP_SETTINGS', {
+	        "API_URL": "https://hidden-journey-63980.herokuapp.com/"
+	    });
 	    ngModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
 	        //$locationProvider.html5Mode(true);
 	        $locationProvider.hashPrefix('!');
@@ -4841,23 +4947,28 @@ webpackJsonp([0],[
 
 	        $stateProvider.state('page1', {
 	            url: '/page1',
-	            template: __webpack_require__(14),
+	            template: __webpack_require__(18),
 	            controller: function controller() {
 	                this.title = 'This is page 1';
 	            },
 	            controllerAs: 'test'
 	        }).state('page2', {
 	            url: '/page2',
-	            template: __webpack_require__(15),
+	            template: __webpack_require__(19),
 	            controller: function controller() {
 	                this.title = 'This is page 2';
 	            },
 	            controllerAs: 'test'
 	        }).state('page3', {
 	            url: '/page3',
-	            template: __webpack_require__(16),
+	            template: __webpack_require__(20),
 	            controller: 'Page3Controller',
 	            controllerAs: 'test'
+	        }).state('page5', {
+	            url: '/page5',
+	            template: __webpack_require__(21),
+	            controller: 'Page5Controller',
+	            controllerAs: 'vm'
 	        });
 	    }]);
 	    if (false) {
@@ -4893,25 +5004,31 @@ webpackJsonp([0],[
 	    }
 	};
 
-	module.exports = exports['default'];
+	module.exports = exports["default"];
 
 /***/ },
-/* 14 */
+/* 18 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>page 1</h1>\n<h2>{{test.title}}</h2>"
 
 /***/ },
-/* 15 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>page 2</h1>\n<h2>{{test.title}}</h2>"
 
 /***/ },
-/* 16 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = "<div id=\"page3\">\n\n  <h1>page 3</h1>\n  <h2>{{test.title}}</h2>\n  <ul>\n      <li ng-repeat=\"person in test.family\">{{person.name}}</li>\n  </ul>\n</div>\n"
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	module.exports = "<div id=\"page5\">\n\n  <h1>page 5</h1>\n  <h2>{{vm.title}}</h2>\n  <ul>\n      <li ng-repeat=\"person in vm.family\">{{person.name}}</li>\n  </ul>\n</div>\n"
 
 /***/ }
 ]);

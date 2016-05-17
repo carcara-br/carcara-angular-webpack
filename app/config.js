@@ -1,4 +1,7 @@
 export default (ngModule, Angular) => {
+    ngModule.constant('APP_SETTINGS', {
+        "API_URL": "https://hidden-journey-63980.herokuapp.com/"
+    });
     ngModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
         //$locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
@@ -24,6 +27,11 @@ export default (ngModule, Angular) => {
             template: require('./page3/page3.html'),
             controller: 'Page3Controller',
             controllerAs: 'test'
+        }).state('page5', {
+            url: '/page5',
+            template: require('./modules/page5/views/index.html'),
+            controller: 'Page5Controller',
+            controllerAs: 'vm'
         });
     }]);
         if(ON_DEMO){
@@ -56,7 +64,7 @@ export default (ngModule, Angular) => {
                     }
                 });
             }]);
-            
+
         }
 
 

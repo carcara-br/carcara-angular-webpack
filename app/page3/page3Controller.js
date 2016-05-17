@@ -6,7 +6,8 @@ let page3Controller = function(){
         {name: 'Andy'},
         {name: 'Jamie'},
         {name: 'Lucy'},
-        {name: 'Quinn'}
+        {name: 'Quinn'},
+        {name: 'Denis'}
     ];
 };
 

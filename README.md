@@ -27,10 +27,10 @@ This project uses or makes :
    * Protractor
 4. Webpack :ok:
    * Compile Sass :ok:
-   * Watch Files
+   * Watch Files :ok:
    * Live Reload
    * Uglify & Concat JS
-   * JS Linter
+   * JS Linter :ok:
    * Move to Dist Folder :ok:
    * Minify images
    * Create Sprites
@@ -57,9 +57,11 @@ $ npm install bower -g
 # install webpack globally
 $ npm install webpack -g
 
+# install webpack-dev-server globally
+$ npm install webpack-dev-server -g
+
 # install dependencies
 $ npm install
-$ bower install
 
 ```
 Wait and enjoy!!!
